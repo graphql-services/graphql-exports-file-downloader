@@ -24,7 +24,8 @@ type FileMetadataFile struct {
 }
 
 type FileMetadata struct {
-	Files []FileMetadataFile
+	Filename string
+	Files    []FileMetadataFile
 }
 
 func receiver(ormClient *graphqlorm.ORMClient) func(e cloudevents.Event) (err error) {
@@ -78,7 +79,7 @@ func handleExport(ctx context.Context, ormClient *graphqlorm.ORMClient, ormEvent
 	fmt.Println("zipped", len(buf.Bytes()))
 
 	var fileId string
-	fileId, err = Upload(buf)
+	fileId, err = Upload(metadata.Filename, buf)
 	if err != nil {
 		return
 	}

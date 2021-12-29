@@ -22,9 +22,9 @@ type GetUploadURLResult struct {
 // ZipFiles compresses one or many files into a single zip archive file.
 // Param 1: filename is the output zip file's name.
 // Param 2: files is a list of files to add to the zip.
-func Upload(buf bytes.Buffer) (fileId string, err error) {
+func Upload(filename string, buf bytes.Buffer) (fileId string, err error) {
 	response, err := getUploadURL(FileUpload{
-		Filename:    "test.zip",
+		Filename:    filename,
 		Size:        len(buf.Bytes()),
 		ContentType: "application/zip",
 	})
