@@ -12,6 +12,7 @@ type FileUpload struct {
 	Filename    string
 	Size        int
 	ContentType string
+	Status      string
 }
 
 type GetUploadURLResult struct {
@@ -27,6 +28,7 @@ func Upload(filename string, buf bytes.Buffer) (fileId string, err error) {
 		Filename:    filename,
 		Size:        len(buf.Bytes()),
 		ContentType: "application/zip",
+		Status:      "COMPLETED",
 	})
 	if err != nil {
 		return

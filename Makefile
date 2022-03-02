@@ -27,7 +27,7 @@ push: login
 	docker push $(TAG)
 
 build-lambda-function:
-	GO111MODULE=on GOOS=linux CGO_ENABLED=0 go build -o main *.go && zip lambda.zip main && rm main
+	GO111MODULE=on GOARCH=amd64 GOOS=linux CGO_ENABLED=0 go build -o main *.go && zip lambda.zip main && rm main
 
 build-local:
 	go get ./...

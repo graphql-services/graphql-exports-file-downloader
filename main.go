@@ -92,7 +92,6 @@ func handleExport(ctx context.Context, ormClient *graphqlorm.ORMClient, ormEvent
 			"state":  "COMPLETED",
 		},
 	})
-	fmt.Println("processed", err)
 	return
 }
 
