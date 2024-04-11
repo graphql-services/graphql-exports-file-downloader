@@ -3,6 +3,7 @@ module github.com/graphql-services/graphql-exports-file-downloader
 go 1.15
 
 require (
+	github.com/akrylysov/algnhsa v1.1.0 // indirect
 	github.com/cloudevents/sdk-go v1.2.0
 	github.com/graphql-services/go-saga v0.0.15
 	github.com/jakubknejzlik/cloudevents-lambda-handler v0.1.2
